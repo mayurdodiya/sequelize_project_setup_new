@@ -1,0 +1,1 @@
+# sequelize_project_setup_new
