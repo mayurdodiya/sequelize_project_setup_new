@@ -1,0 +1,53 @@
+1. register
+curl --location 'http://localhost:3000/api/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name": "Mayur",
+  "email": "mayur2@gmail.com",
+  "password": "123456",
+  "phone": "9876543210",
+  "role": "user",
+  "details": {
+    "address": "Varachha",
+    "city": "Surat",
+    "state": "Gujarat",
+    "country": "India",
+    "pincode": "395006",
+    "gender": "male"
+  }
+}'
+
+2. Login
+curl --location 'http://localhost:3000/api/users/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "mayur2@gmail.com",
+    "password": "123456"
+}'
+
+3. Update User by ID
+curl --location --request PUT 'http://localhost:3000/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name": "Mayur Updated",
+  "email": "mayur_updated@gmail.com",
+  "phone": "9999999999",
+  "role": "admin",
+  "details": {
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "gender": "male"
+  }
+}'
+
+4. Delete User by ID
+curl --location --request DELETE 'http://localhost:3000/1'
+
+5. View User by ID
+curl --location 'http://localhost:3000/1'
+
+6. View All Users (with pagination + search)
+curl --location 'http://localhost:3000/api/users?page=2&size=1&s=mayur' \
+--header 'Content-Type: application/json' \
+--header 'x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzczOTIwNDE2LCJleHAiOjE3NzQwOTMyMTZ9.YhVl3G2iRZ_qq7TxnLpxAxh9MvOE-yoU3sdnNVaKCpY' \
+--data ''

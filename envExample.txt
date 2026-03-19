@@ -1,0 +1,9 @@
+DB_NAME=employeedb
+DB_HOST=localhost
+DB_USERNAME=root
+# DB_PASSWORD=Root@12345
+DB_PASSWORD=
+DB_DIALECT=mysql
+PORT=3004
+JWT_SECRET=secrete
+JWT_EXPIRY=2d
